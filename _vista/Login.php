@@ -2,41 +2,23 @@
 session_start();
 include_once '../Conexion/Cx.php';
 ?>
-<div>
 <div class="main">
-		<div class="login-form">
-			<h1>Member Login</h1>
-					<div class="head">
-						<img src="images/user.png" alt=""/>
-					</div>
-					<form>
-						<input type="text" class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
-						<div class="submit">
-							<input type="submit" onclick="myFunction()" value="LOGIN" >
-					</div>	
-						<p><a href="#">Forgot Password ?</a></p>
-				</form>
-			</div>
-			<!--//End-login-form-->
-			<div class="ad728x90" style="text-align:center">
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- w3layouts_demo_728x90 -->
-				<ins class="adsbygoogle"
-				     style="display:inline-block;width:728px;height:90px"
-				     data-ad-client="ca-pub-9153409599391170"
-				     data-ad-slot="8639520288"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-		   </div>
-
-			 <!-----start-copyright---->
-   					<div class="copy-right">
-						<p>Template by <a href="http://w3layouts.com">w3layouts</a></p> 
-					</div>
-				<!-----//end-copyright---->
-		</div>
-			 <!-----//end-main---->
-    
+    <div class="login-form">
+        <h1>TESIS KESSLIN</h1>
+        <div class="head">
+            <img src="images/user.png" alt=""/>
+        </div>
+        <form id="Formlogin">
+            <input type="text" class="text" id="usuario" value="Usuario" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                            this.value = 'USERNAME';
+                                                        }" >
+            <input type="password" id="contrasena" value="Contraseña" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                            this.value = 'Password';
+                                                        }">
+            <div class="submit">
+                <input type="button" onclick="Login()" value="INGRESAR" >
+            </div>	
+            <p><a href="#">Olvidastes tu contraseña ?</a></p>
+        </form>
+    </div>
 </div>

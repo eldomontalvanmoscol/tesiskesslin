@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(isset($_SESSION['Login'])){
+   include '_vista/Login.php';  
+}else{
+?>
+
 <html>
     <head>
         <title>Sistema de Control de Activos</title>
@@ -19,7 +26,7 @@
         </script>
     </head>
     <body>
-        <?php include '_controlador/LoginC.php' ?>
 
     </body>
 </html>
+<?php }?>
