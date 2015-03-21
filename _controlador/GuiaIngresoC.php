@@ -2,6 +2,7 @@
 session_start(); 
 
 header("Cache-Control: no-store, no-cache, must-revalidate");
+
 include ('cx.php');
 
 $TituloM	=	"Guia de Ingreso";	//Título del módulo. Ventana del modulo y las ventanas emergentes.
