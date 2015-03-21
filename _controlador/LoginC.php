@@ -12,7 +12,7 @@
                                                             this.value = 'Password';
                                                         }">
             <div class="submit">
-                <input type="submit" onclick="Login()" value="INGRESAR" >
+                <input type="button" onclick="Login()" value="INGRESAR" >
             </div>	
             <p><a href="#">Olvidastes tu contraseña ?</a></p>
         </form>

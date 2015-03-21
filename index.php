@@ -9,7 +9,11 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="js/jquery-1.4.4.js"></script>
         <script language="javascript" src="js/jquery-1.3.1.min.js"></script>
+
         <script language="javascript" src="Controles/DataGrid.php"></script>
+
+        <script language="javascript" src="funciones/functions.js"></script>
+
         <script>
 
         </script>
