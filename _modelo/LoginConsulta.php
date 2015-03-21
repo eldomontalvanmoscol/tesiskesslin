@@ -1,5 +1,5 @@
 <?php
-
+include '../Conexion/Cx.php';
 function Ingresar(){
     
     
