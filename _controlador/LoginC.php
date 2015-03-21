@@ -1,14 +1,14 @@
 <div class="main">
     <div class="login-form">
-        <h1>Member Login</h1>
+        <h1>TESIS KESSLIN</h1>
         <div class="head">
             <img src="images/user.png" alt=""/>
         </div>
         <form>
-            <input type="text" class="text" value="Usuario" onfocus="this.value = '';" onblur="if (this.value == '') {
+            <input type="text" class="text" id="usuario" value="Usuario" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                             this.value = 'USERNAME';
                                                         }" >
-            <input type="password" value="Contraseña" onfocus="this.value = '';" onblur="if (this.value == '') {
+            <input type="password" id="contrasena" value="Contraseña" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                             this.value = 'Password';
                                                         }">
             <div class="submit">
