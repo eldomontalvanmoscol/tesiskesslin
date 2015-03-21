@@ -4,7 +4,7 @@
         <div class="head">
             <img src="images/user.png" alt=""/>
         </div>
-        <form>
+        <form id="Formlogin">
             <input type="text" class="text" id="usuario" value="Usuario" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                             this.value = 'USERNAME';
                                                         }" >
