@@ -3,9 +3,13 @@ include '../Conexion/Cx.php';
 
 ### MODELO LISTA 
 function Listar(){
-    
-    
+    global $link ;
+    $cons = $link->query("CALL GetUsuario('$usuario','$pass',$Tipo_Usuario)");
+    $resp=mysqli_query($link,$cons);
+    $row=$resp->fetch_object();
+    return $row;
 }
+
 ## MODELO VER 
 function Ver(){
     
