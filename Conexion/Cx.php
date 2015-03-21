@@ -18,4 +18,6 @@ return $link;
 mysqli_close($link);	
 }
 
+
+
 ?>

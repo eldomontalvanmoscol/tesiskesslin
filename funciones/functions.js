@@ -10,13 +10,3 @@ Login = function () {
 
 }
 
-
-GuiaIngreso= function () {
-    
-    var Url="_modelo/GuiaIngreso.php?Accion=Listar";	
-    jQuery.post(Url, '', function () {
-        
-        
-    });
-
-}
