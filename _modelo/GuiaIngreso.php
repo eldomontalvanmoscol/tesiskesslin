@@ -1,13 +1,43 @@
 <?php
 include '../Conexion/Cx.php';
-function Ingresar(){
-    $usuario=$_REQUEST['Usuario'];
-    $usuario=$_REQUEST['Contra'];
+
+### MODELO LISTA 
+function Listar(){
+    
     
 }
+## MODELO VER 
+function Ver(){
+    
+    
+}
+## MODELO CREA 
+function Crear(){
+    
+    
+}
+
+## MODELO ELIMINA
+function Eliminar(){
+	
+    
+}
+
+
 switch($_REQUEST['Accion']){
-    case 'Ingresar':
-        Ingresar();
-        break;
+    case "Listar":
+	Listar();
+	break;
+    
+case "Crear":
+	Crear();
+	break;
+
+case "Eliminar":
+	Eliminar();
+	break;
+case "Ver":
+	Ver();
+	break;
     
 }
