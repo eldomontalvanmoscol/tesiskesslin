@@ -1,10 +1,7 @@
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['Login'])){
-   include '_vista/Login.php';  
-}else{
+include_once 'Conexion/Cx.php';
 ?>
-
 <html>
     <head>
         <title>Sistema de Control de Activos</title>
@@ -21,12 +18,8 @@ if(isset($_SESSION['Login'])){
 
         <script language="javascript" src="funciones/functions.js"></script>
 
-        <script>
-
-        </script>
     </head>
     <body>
-
+        <?php include '_vista/Login.php';?>
     </body>
 </html>
-<?php }?>

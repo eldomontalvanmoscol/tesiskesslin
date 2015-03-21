@@ -4,6 +4,7 @@ $link=  Conectarse();
 function Ingresar(){
     $usuario=$_REQUEST['Usuario'];
     $pass=$_REQUEST['Contra'];
+    $Tipo_Usuario=1;
     $url="index.php";
     $r = $link->query("CALL GetUsuario('$usuario','$pass',$Tipo_Usuario)");
     $cont=  mysqli_num_rows($r);

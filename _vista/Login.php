@@ -1,7 +1,3 @@
-<?php
-session_start();
-include_once '../Conexion/Cx.php';
-?>
 <div class="main">
     <div class="login-form">
         <h1>TESIS KESSLIN</h1>
@@ -21,4 +17,4 @@ include_once '../Conexion/Cx.php';
             <p><a href="#">Olvidastes tu contraseña ?</a></p>
         </form>
     </div>
-</div>
+</div> 
