@@ -9,8 +9,8 @@ Class Login{
     $pass=$_REQUEST['Contra'];
     $Tipo_Usuario=1;
     $url="index.php";
-    $r=$link->query("SELECT * FROM usuario WHERE nombre_usuario='$usuario' AND pass='$pass' AND tipo_usuario=$Tipo_Usuario");
-    //$r = $link->query("CALL GetUsuario('$usuario','$pass',$Tipo_Usuario)");
+    //$r=$link->query("SELECT * FROM usuario WHERE nombre_usuario='$usuario' AND pass='$pass' AND tipo_usuario=$Tipo_Usuario");
+    $r = $link->query("CALL GetUsuario('$usuario','$pass',$Tipo_Usuario)");
     $cont=  mysqli_num_rows($r);
     if($cont==0){
         echo $index;
