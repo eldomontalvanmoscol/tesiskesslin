@@ -14,7 +14,7 @@ include_once 'Conexion/Cx.php';
         <script type="text/javascript" src="js/jquery-1.4.4.js"></script>
         <script language="javascript" src="js/jquery-1.3.1.min.js"></script>
 
-        <script language="javascript" src="Controles/DataGrid.php"></script>
+        
 
         <script language="javascript" src="funciones/functions.js"></script>
 

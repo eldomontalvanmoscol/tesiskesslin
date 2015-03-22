@@ -3,14 +3,15 @@ session_start();
 
 header("Cache-Control: no-store, no-cache, must-revalidate");
 
-include ('cx.php');
+include_once ('cx.php');
 
 $TituloM	=	"Guia de Ingreso";	//Título del módulo. Ventana del modulo y las ventanas emergentes.
 $FileNameM	=	"GuiaIngreso";		//Nombre del archivo modelo(sin .php). Sin espacios, tílde o símbolos.
 
 ### CONTROLADOR LISTA 
 function Listar(){
-    
+include_once ('../_modelo/GuiaIngreso.php');
+$data   =   m_Listar();
     
 }
 ## CONTROLADOR VER 
