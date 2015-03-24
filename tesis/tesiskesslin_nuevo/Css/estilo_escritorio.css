@@ -1,0 +1,160 @@
+@charset "utf-8";
+@font-face {
+font-family: Microgram;
+src: url(../Css/M025096D.TTF);
+}
+
+body {
+	background-color: #6ABDFB;
+	font-family: Sans-serif, Arial;
+	font-size:12px;
+	margin: 10;
+	background-image: url(../Images/flores_azules.jpg);
+	background-repeat: repeat-x;
+	padding:10px;
+	overflow:hidden;	
+}
+
+.icon{
+	background-image: url(../Images/folder.png);
+	background-repeat:no-repeat;
+	
+	}
+.icon:hover,.file:hover{
+	background-color: #B5C7E1;	
+}
+
+.file{background-image: url(../Images/file.png);
+	background-repeat:no-repeat;}
+	
+.icon,.file{
+	width:80px;
+	height:52px;
+	color:#FFF;
+	cursor:default;	
+	padding-top:50px;
+	vertical-align:central;
+	float:left;
+	}
+
+.inicio{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	height:23px;	
+	background-color:#16335F;
+	color:#FFF;
+	border: solid 1px #999999;
+	padding-top:5px;
+}
+
+.inicioB{
+	padding:5px;
+	margin:1px;
+}
+
+.inicioB:hover{ background-color:#E1EAF1;
+color:#000;
+}
+	
+#Links{
+	position:absolute;
+	top:20px;
+	right:10px;
+	width:200px;
+	padding:5px;
+	background-color:#069;
+	border:solid 1px #999999;
+	color:#FFF;
+	}
+	
+.FondoLogin{
+	
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#25567B), to(#151515));
+	background: -moz-linear-gradient(top,  #25567B,  #151515);
+	background: -o-linear-gradient(top,  #25567B,  #151515);
+	background: -ms-linear-gradient(top,  #25567B,  #151515);*/
+}
+
+.Logo{
+	font-family: Microgram;
+	font-size:48px;
+	color:#FF9200;	
+   text-shadow: -1px -1px white, 1px 1px #333;
+	}
+
+A:link {
+	font-weight:400;
+	text-decoration:none;
+	color:#00C;
+}
+A:active {
+	color:#00C;
+	font-weight:400;
+	text-decoration:none;
+}
+A:visited {
+	font-variant:normal;
+	color:#00C;
+	font-weight:400;
+	text-decoration:none;
+}
+A:hover {
+	color:#00C;
+	font-variant:normal;
+	font-weight:400;
+	text-decoration:underline;
+}
+
+/*VARIOS*/
+.out {
+	background-color:#D6D6D6;
+	color:MenuText;
+	border: 1px outset #FFFFFF;
+}
+
+.over {
+	background-color:#e9e8e0;
+	border: 1px inset #FFFFFF;
+}
+
+#MenuInicio{
+	display: none;
+	width: 200px;
+	height: 380px;
+	border: solid 1px #CCCCCC;
+	position: absolute;
+	left: 5px;
+	bottom: 28px;
+	background-color: #D89614;
+	padding: 5px;
+	color: #000;
+}
+
+/*DATA GRID*/
+.Grid {
+	background-color:#fff;
+}
+.Grid:hover {
+	background-color:#E2E6AC;
+}
+
+/*TOOL BAR*/
+.Toolbar {
+	float:left;
+	color:#000;
+	text-align:center;
+	cursor:pointer;
+	margin:1px;
+	padding:4px;
+}
+.Toolbar:hover {
+	color:#25567B;
+	border: 1px;
+	border-style:solid;
+	background-color:#ffffef;
+	border-right-color:#FFF;
+	border-bottom-color:#FFF;
+	border-left-color:#999;
+}

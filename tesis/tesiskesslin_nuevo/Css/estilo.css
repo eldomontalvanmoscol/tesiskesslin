@@ -1,0 +1,468 @@
+@charset "utf-8";
+body {
+background-color:#666;
+font-family:Sans-serif, Arial;
+margin:0;
+}
+
+html,body {
+height:100%;
+}
+
+body,td,th,input,select {
+font-size:9pt;
+}
+
+hr {
+border:1px dashed #CCC;
+}
+
+.boton[disabled] {
+display:none;
+}
+
+#btnGuardar,#btnCancelar,#btnProcesar{
+	float:left;	
+}
+
+.panel {
+background-color:#DCE2BC;
+}
+
+.Underline {
+text-decoration:underline;
+}
+
+input:focus,select:focus {
+border:1px dotted #000;
+background-color:#C9E4C9;
+}
+
+input[readonly]{
+	border:1px dotted #D9D2AE;
+	background-color:#F9F8F0;
+}
+
+
+A:visited {
+background:none;
+font-variant:normal;
+color:windowtext;
+font-weight:400;
+text-decoration:none;
+}
+
+A:hover {
+color:windowtext;
+background:none;
+font-variant:normal;
+font-weight:400;
+text-decoration:underline;
+}
+
+/*BOTONES*/
+.New {
+background-image:url(../ImgSys/nuevo.png);
+}
+
+.Search {
+background-image:url(../ImgSys/search.png);
+}
+
+.lupa{
+background-image: url(../ImgSys/search.png); 
+background-repeat: no-repeat; 
+background-position: center center; 
+float:right; 
+}
+
+.Search:hover {
+	background-color:#FFF;
+	border: 1px dotted #666;
+}
+.Search:active {
+	background-color: #FC0;
+	border: 1px dotted #666;
+}
+
+.Combo {
+background-image:url(../ImgSys/Combo.png);
+}
+
+.DocRelacionado{
+background-image:url(../ImgSys/DocRelacionado.png);
+}
+
+.Calendar{
+background-image:url(../ImgSys/Calendar.png);
+}
+
+.Import {
+	background-image:url(../ImgSys/Import.png);
+}
+.ImpotNube{
+	background-image:url(../ImgSys/link.gif);
+}
+
+.ImportSunat{
+	background-image:url(../ImgSys/buton.gif);
+	background-repeat: no-repeat;
+}
+.ImportD{
+	background-image:url(../ImgSys/Import.png);
+	background-repeat: no-repeat;
+}
+
+.Import, .Calendar, .DocRelacionado, .Combo, .Search, .New, .ImportD, .ImpotNube, .ImportSunat{
+	background-repeat:no-repeat;
+	border:transparent;
+	background-color: transparent;
+}
+.Import:active, .Calendar:active, .DocRelacionado:active, .Combo:active, .Search:active, .New:active, .ImpotNube:active, .ImportSunat:active, .ImportD:active {
+
+	border: 1px;
+	border-style:solid;	
+	border-top-color: #666;
+	border-right-color: #FFF;
+	border-bottom-color: #FFF;
+	border-left-color: #666;
+}
+
+.Import[disabled],.Calendar[disabled],.DocRelacionado[disabled],.Combo[disabled],.Search[disabled],.New[disabled]{
+opacity:0.4;filter:alpha(opacity=40)
+}
+
+/*VARIOS*/
+
+.out {
+background-color:#ece9d7;
+color:#033;
+}
+
+.over {
+background-color:#E0EADF;
+border-color:ThreeDDarkShadow ThreeDHighlight ThreeDHighlight ThreeDDarkShadow;
+border-style:solid;
+border-width:1px;
+}
+
+#Leyenda {
+position:absolute;
+margin:3px;
+padding:5px;
+}
+
+.LeyendaIn {
+width:190px;
+background-color:#FFC;
+border:1px solid #F60;
+padding:5px;
+}
+
+#Bloqueo {
+position:absolute;
+background-color:#1C488A;
+filter:alpha(opacity=95);
+-moz-opacity:.95;
+opacity:.95;
+left:1px;
+top:1px;
+width:100%;
+height:100%;
+z-index:10000;
+}
+
+.mensajeAsterisco {
+font-size:9px;
+font-weight:700;
+}
+
+.itext {
+width:100%;
+}
+
+#BarraInfo {
+background-color:#B8C5CF;
+color:#2B4242;
+}
+
+.BarraTitulos,#CajaModulos {
+background-color:#7CA78E;
+color:#FFF;
+}
+
+.Grid {
+background-color:#ffffef;
+}
+
+.Grid:hover {
+background-color:#FC0;
+}
+
+.HeadTab {
+height:22px;
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:0;
+padding:0;
+}
+
+.BodyTab {
+background-color:#F5F4EF;
+border-color:#FFF #666 #666 #FFF;
+border-style:solid;
+border-width:1px;
+padding:5px;
+}
+
+.TabOn {
+float:left;
+cursor:pointer;
+border-right-width:1px;
+border-right-style:solid;
+border-right-color:#666;
+margin-right:2px;
+list-style-type:none;
+border-bottom-width:1px;
+border-bottom-style:solid;
+border-bottom-color:#F5F4EF;
+background-image:url(../Controles/Tab/images/p-izq_on.gif);
+background-repeat:no-repeat;
+background-position:inherit;
+padding:5px 5px 3px 10px;
+}
+
+.TabOff {
+float:left;
+cursor:pointer;
+border-right-width:1px;
+border-right-style:solid;
+border-right-color:#666;
+margin-right:2px;
+list-style-type:none;
+background-image:url("../Controles/Tab/images/p-izq.gif");
+background-repeat:no-repeat;
+background-position:inherit;
+padding:5px 5px 3px 10px;
+}
+
+.Toolbar {
+float:left;
+color:#000;
+text-align:center;
+cursor:pointer;
+margin:1px;
+padding:4px;
+}
+
+.Toolbar:hover {
+background-color:#ffffef;
+border-color:#999 #FFF #FFF #999;
+border-style:solid;
+border-width:1px;
+}
+
+.AcordeonMenu {
+background-color:#ece9d7;
+text-align:left;
+cursor:pointer;
+border-top-width:1px;
+border-top-style:solid;
+border-top-color:#FFF;
+border-bottom-width:1px;
+border-bottom-style:solid;
+border-bottom-color:#999;
+margin:1px;
+padding:4px;
+}
+
+.AcordeonMenu:hover {
+background-color:#ffffef;
+border-top-width:1px;
+border-bottom-width:1px;
+border-top-style:solid;
+border-bottom-style:solid;
+border-top-color:#999;
+border-bottom-color:#FFF;
+}
+
+.AcordeonBlock {
+visibility: inherit;
+background-color:#FFF;
+padding:4px; 
+overflow:auto;
+}
+
+A:link,A:active {
+background:none;
+color:windowtext;
+font-weight:400;
+text-decoration:none;
+}
+
+.BarraMenu,.MenuBarSubmenuVisible,.ClassWin,.CajaModulos {
+background-color:#066;
+color:#FFF;
+}
+
+/*ITEM GRID*/
+.BotonT{
+	width:24px;
+	height:18px;
+	border: 1px solid #999999;
+	font-size:10px;
+}
+
+.Izq{
+	text-align:left;
+}
+
+.Der{
+	text-align:right;
+}
+
+.itext,.Izq,.Der {
+	border-style:none;
+	width:100%;
+	font-size:9.5px;
+}
+
+.Izq1 {	border-style:none;
+	width:100%;
+}
+
+.Dev{
+	background-image:url(../ImgSys/sql.gif);
+	width:16px;
+	height:16px;
+	border:none;
+}
+
+.TreeView {
+	padding-left: 0px;
+	margin: 0px;
+	list-style-type: none;
+	width:105%;
+}
+
+.TreeFolder {
+	color:#000;
+	font-variant:normal;
+	font-weight:400;
+	cursor:default;
+}
+
+.TreeFolder:hover {
+	color:#000;
+	font-variant:normal;
+	font-weight:400;
+	cursor:default;
+	text-decoration:none;
+}
+
+#IdColapsa,#IdExpande{
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-ms-border-radius:5px;
+	color:#CCC;
+	border:1px solid #CCC;
+	padding:1px;
+	text-align: center;
+	}
+#IdColapsa:hover,#IdExpande:hover{
+	background-color:#FC0;
+	color:#333;}
+	
+.LinkSelect { /*Links de Caja Control*/
+	color:#FFFFFF !important;
+	background-color:#003366;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px; 
+	-ms-border-radius:4px;
+}
+
+.SNeg {
+	font-weight:400;
+	text-decoration:none;
+	color:#00C;
+}
+
+.SNeg:hover {
+	color:#00C;
+	font-variant:normal;
+	font-weight:400;
+	text-decoration:underline;
+	cursor:pointer;	
+}
+
+.LinkNoSelect {
+	white-space:nowrap;
+}
+
+#FGestionDoc {
+	padding:3px;
+	background-color:#4A5E58;
+	position:absolute;
+	display:none;
+	width:342px;
+	height:151px;
+	top:50%;
+	left:50%;
+	margin-left:-174px;
+	margin-top:-79px;
+	/*border-radius:6px;
+	-moz-border-radius:6px;*/
+}
+
+#FGestTitle {
+	background-color:#4A5E58;
+	color:#FFF;
+	font-weight:bold;
+}
+
+#FGestBody {
+	padding:5px;
+	background-color:#EEEEEE;
+	/*width:350px;*/
+}
+
+.MenuHerra{	
+	width:90px;
+	height:20px;
+	border:solid 1px;
+	padding:1px;
+	float:left;
+	color:#000;
+	cursor:pointer;
+	vertical-align:middle;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	text-align:center;
+	}
+
+
+
+.MenuHerraSelect{	
+	width:90px;
+	height:20px;
+	border:solid 1px;
+	background-color:#CAC9C9;
+	padding:1px;
+	float:left;
+	color:#000;
+	cursor:pointer;
+	vertical-align:middle;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	text-align:center;
+	}
+	
+.MenuHerra:hover{
+	background-color:#CAC9C9;
+	color:#000;
+	}
