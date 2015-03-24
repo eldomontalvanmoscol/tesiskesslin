@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+#ToolTips {
+position:absolute;
+padding:7px;
+background-color:#FF9;
+border:#CCC solid 1px;
+z-index:7000;
+}

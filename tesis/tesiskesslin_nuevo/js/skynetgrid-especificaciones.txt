@@ -1,0 +1,63 @@
+jQuery('#'+aDiv).SkynetGrid({ 
+  1.  Nombre: 'Ctza',
+  2.  Url: 'Controles/DataGrid_3/GridQuery.php', // 
+  3.  Alto: '', 
+  4.  Ancho: '', // Ej: ''<>100%, '50px' o '50%'
+  5.  NroReg: <?php echo $_SESSION['Per_NumRegsList']; ?>,
+  6.  PagIni: 0,
+  7.  QueryGrid: "SELECT Serie,NumDoc FROM cotizacion WHERE TipoDoc=13 IdMiEmpresa='<?php echo $_SESSION['IdMiEmpresa'];?>'",
+  8.  OtrosCampos: {0:'IdGuiaRelacion', 1:'IdMiSede'},  
+  9.  OrderBy: 'IdCotizacion',
+  10. OrderCampo: 'DESC',
+  11. Options:[{value:"NomCliente",name:'Nombre'},{value:'Serie',name:'Serie'}], // 
+  12. FocusOn: 1, 
+  13. CampoId:'IdCotizacion',
+  14. FunciLoadGrid: 0, 
+  15. FunciMouse:[{name:'CtzaList'},{name:'EditaCtza'},{name:'CtzaList'}],
+  16. FunciParam:{0:'IdCotizacion',1:'TipoDoc'},// con este mismo orden
+  17. MenuVisible: 1, 
+  18. MenuContextual: [
+      {NameLink:'Socio de negocio', IdLink:'SocioNegCtza', ImgLink:'ImgSys/partner.png'},
+	  {NameLink:'Socio de negocio', IdLink:'SocioNegCtza', ImgLink:'ImgSys/partner.png'}
+      ],		// '', si no deseas poner opciones complementarias
+  19.  Msg: '',
+  20.  Columna : [
+       {display: 'Id', name: 'IdCotizacion', width: '5%', sortable: true, align: 'center'},
+       {display: 'Serie', name: 'Serie', width: '7%', sortable: true, align: 'center'},
+       {display: 'Corre.', name: 'NumDoc', width: '7%', sortable: true, align: 'center'},
+       {display: 'F.Emisión', name: 'FCrea', width: '8%', sortable: true, align: 'center'}
+       ]
+});
+
+1.	Nombre del Grid
+2.  Ruta donde se encuentra el archivo, donde se ejecuta el query del grid
+3.	Alto del grid, Vacio equivale al 100% del div contenedor (div ventana), puede ser expresado tanto en porcentaje como en pixeles. Ej. '200px' o '50%'
+4.	Ancho del grid (especificaciones igual q el alto de grid)
+5.	Cantidad de registros q se visualizaran en cada pagina
+6.	Esto si debe dejarse en cero, equivale al primer registro de la tabla
+7.	Query q extrae la data de la base de datos, q se visualizara en el grid
+8.	Si queremos sacar campos q estan en el query y q no se visualizan en el grid, colocamos aqui el nombre o alias del campo. En caso q no necesitemos sacar mas campo colocamos {}.
+9.	Opciones q aparecen en el combo del buscador, deben ir los nombres del campo (no alias)
+10.	Nombre del campo por el cual se ordenaran los registros
+11.	Orden: ASC: ascendente - DESC: descendente
+12.	Ubica el focus en el input de busqueda al cargar el grid. Ej. 0: Desactiva el focus en Campo Buscar,  1: Activa el focus en Campo Buscar
+13.	Campo Id del grid
+14.	Funcion q se ejecuta al terminar de cargar grid - 0: No se ejecuta (desactivada), 1: Se ejecuta (activada)
+15.	FunciMouse: [{name:'CtzaList'}, : ejecuta funcion al hacer click     {name:'EditaCtza'},   ejecuta funcion al hacer dbclick       {name:'CtzaList'}  ejecuta funcion al hacer click derecho]
+16.	Definir los parametros de las funciones Click, DobleClick y ClickDerecho, aqui colocaremos los campos q se extran del query del query q se necesitan para ejecutar las funciones
+17.	Habilitar o desabilitar el menu contextual. 0: No muestra (deshabilita), 1: Muestra Menu (habilitado)
+18.	Links q aparecen por defecto en el menu contextual (Name)
+    NameLink: Nombre q aparece en el menu contextual.
+	IdLink: Id de link
+	ImgLink: ruta del icono q se mostrara en el menucontextual
+19.	Mensaje q se se mostrar cuando el grid no tenga ningun visible o cuando se realice una busqueda y no se encuetre el registro especificado. Ej. '': vacio (muestra mensaje por defecto). Si queremos podemos agregarle un msj personalizado.
+20.	Especificaciones del grid.
+    display:	'texto q se mostrara como titulo de la columna' Ej. 'Nombre'
+	name: 		'Nombre del campo o alias' Ej. 'NomCliente'
+	width:		'Ancho de la columna' Ej. '15%'
+	align: 		'alineacion de la columna'. Ej. 'left', 'center', 'right'
+	     
+
+
+
+

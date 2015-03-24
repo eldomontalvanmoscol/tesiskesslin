@@ -1,0 +1,11 @@
+<?PHP  
+require_once dirname(__FILE__) . 'phpExcel/PHPExcel.php';
+
+"phpExcelUtilidades.php";
+ 
+
+class phpExcelUtilidades extends PHPExcel { 
+
+}	
+
+?>

@@ -1,0 +1,107 @@
+<?php
+session_start();
+include('../../Cx.php');
+$link=Conectarse();
+
+$DirFicheros="../../Preferencias/".$_SESSION['IdMiEmpresa']."/Archivos/";
+
+//capturamos la extencion
+function ext($archivo){
+	$trozos = explode("." , $archivo);
+	$ext = $trozos[ count($trozos) - 1];
+	//if($ext=='php'){
+	//echo "<b style=\"color:red\">No se puede subir un archivo con extensión php.</b>";
+	//exit();
+	///}else{
+	return (string) $ext;
+	//}
+}
+
+function nomm($archivo){
+	$trozos = explode("." , $archivo);
+	$ext = $trozos[ count($trozos) - 2];
+	return (string) $ext;
+}
+
+function TipoFile($Type) {
+	$text = explode('/',$Type);
+	$Tipo = $text[0];
+	return (string) $Tipo;
+}
+
+//
+	
+
+function validar($texto){		
+
+return $texto1=str_replace(" ","_",$texto);  
+	
+}
+	
+
+//
+//$Extencion=ext($_FILES['File']['name']);
+$Extencion=nomm($_FILES['File']['name']);
+$Extencion2=ext($_FILES['File']['name']);
+
+if($Extencion2=='php'){ 
+ header("Location: Iframe.php?ext=".TipoFile($_FILES['File']['type']));
+ exit(); 
+}
+
+
+//obtenemos el ultimo ID a insertar
+	include('../../Class/UltimoId.php'); 	
+	
+		
+    $ID = CampoTabla($link,'IdFiles','ficheros')+1; 
+    $Extencion1=validar($Extencion);
+//creamos la variable del nombre del fichero
+	$NombreFile=$ID.".".$Extencion2;
+	//$NombreFile = $_POST['IdMod']."_".$_POST['IdDoc'].".".$Extencion2;
+	
+	/*switch($_POST['TipoDoc']){
+		case '0': $NombreFile = $ID.'_'.$_POST['IdMod']."_".$_POST['IdDoc'].".".$Extencion2; break;
+	     default: $NombreFile = $ID.'_'.$_POST['IdMod']."_".$_POST['TipoDoc']."_".$_POST['IdDoc'].".".$Extencion2; break;
+	}*/
+	//$NombreFile = $ID."_".$_POST['IdMod'].".".$Extencion2;
+	
+	
+	//$NombreFile = $_POST['IdMod']."_".$_POST['TipoDoc']."_".$_POST['IdDoc'].".".$Extencion2;
+
+	 $inserta = "INSERT INTO ficheros (
+	IdMiEmpresa,
+	IdMod,
+	IdDoc,
+	TipoDoc,
+	Nombre,
+	NomSistema,
+	NomOrigen,
+	Keyword,
+	Tags,
+	Peso,
+	Type,
+	Extencion,
+	FCrea
+	) VALUES (
+	'".$_SESSION['IdMiEmpresa']."',
+	'".$_POST['IdMod']."',
+	'".$_POST['IdDoc']."',
+	'".$_POST['TipoDoc']."',
+	'".utf8_decode($_POST['NombreFile'])."',
+	'".$NombreFile."',
+	'".$_FILES['File']['name']."',
+	'".utf8_decode($_POST['Keyword'])."',
+	'".utf8_decode($_POST['Tags'])."',
+	'".$_FILES['File']['size']."',
+	'".$_FILES['File']['type']."',
+	'".$Extencion2."',
+	NOW()
+	)";
+$resultados = mysqli_query($link,$inserta);
+
+//Guardamos el archivo en la ruta especificada
+move_uploaded_file($_FILES['File']['tmp_name'], $DirFicheros.$NombreFile);
+
+header("Location: Iframe.php?ext=".TipoFile($_FILES['File']['type']));
+?>

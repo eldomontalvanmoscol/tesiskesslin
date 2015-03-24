@@ -1,0 +1,84 @@
+<?php
+session_start();
+include("../../Cx.php");	//Clase de conexion mysqli
+$link=Conectarse();
+
+//Multi
+//include ('../../Componentes/Multiempresa/Sincronizar/ProductosVariablesId.php');
+//End
+
+include('../../Class/RedondeoDecimales.php');	//Clase de conexion mysqli
+$DirName='http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['ConfG_RutaRelativaS'];	
+$DirFicheros=$DirName.'Preferencias/'.$_SESSION['IdMiEmpresa'].'/Archivos/';
+$tipo_ope = $_POST['tipo_ope'];
+if($tipo_ope == "L"){
+   $btn_eli = "disabled='disabled'";
+}else{
+  $btn_eli = '';
+}
+
+//TIPO DE ARCHIVOS
+if($_POST['TipoFile']==0){
+	$CondTipF = " AND Type LIKE 'image%'";
+}else{
+	$CondTipF = " AND Type NOT LIKE 'image%'";
+}
+
+if($_POST['TipoDoc']==0){
+	$CondTipD = "";
+}else{
+	$CondTipD = ' AND TipoDoc = "'.$_POST['TipoDoc'].'" ';
+}
+
+?>
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+
+<?php    
+//$consulta = 'SELECT NomSistema,IdFiles,Extencion,NomOrigen,Type,Peso,date_format(FCrea,"%d-%m-%Y") FCrea FROM ficheros WHERE IdMod='.$_SESSION['IdMod'].' AND IdDoc="'.$_SESSION['IdDoc'].'" '.$CondTipD.$CondTipF.' ORDER BY IdFiles desc';
+   $consulta = 'SELECT NomSistema,IdFiles,Extencion, (SELECT Nombre FROM persona WHERE IdPersona=(SELECT IdPersona FROM usuarios_skynet WHERE IdUsuario = ficheros.IdUserCrea)) AS Nombre,NomOrigen,Type,Peso,date_format(FCrea,"%d-%m-%Y") FCrea FROM ficheros WHERE IdMod='.$_SESSION['IdMod'].' AND IdDoc="'.$_SESSION['IdDoc'].'" '.$CondTipD.$CondTipF.' AND IdMiEmpresa='.$_SESSION['IdMiEmpresa'].' ORDER BY IdFiles desc';
+//SELECT NomSistema,IdFiles,Extencion,NomOrigen,Type,Peso,date_format(FCrea,"%d-%m-%Y") FCrea FROM ficheros WHERE IdMod=23 AND IdDoc="25" AND TipoDoc = "13" AND Type LIKE 'image%' AND IdMiEmpresa=1 ORDER BY IdFiles desc
+$resultados = mysqli_query($link,$consulta);
+	$a=0;
+	while($fila = $resultados->fetch_object()){
+	$a++;
+	$PesoFile=redondeado ($fila->Peso/1024 , 2);
+	$FileDat="Nombre Sys: $fila->NomSistema<br>Tipo: $fila->Type<br>Peso: ".$PesoFile." Kb<br>Creacion: $fila->FCrea<br>";
+	
+	switch($fila->Extencion){
+		case 'exe': $icon='pages'; break;
+		case 'jsp': $icon='pages'; break; 
+		case 'asp': $icon='pages'; break; 
+		case 'js': $icon='pages'; break;
+		default: $icon=$fila->Extencion; break;
+	}
+
+		echo "<tr>";
+			echo "<td bgcolor=\"#FFFFFF\" align=\"right\" class=\"out\" width=\"1%\">$a</td>";
+			echo "<td width=\"1%\"><input type=\"button\" name=\"button3\" id=\"button3\" ".$btn_eli." 
+			value=\" X \" onclick=\"DeleteFile(".$fila->IdFiles.",'".$fila->NomSistema."');\" class=\"BotonT\"/>";
+			echo "</td>";
+			echo "<td bgcolor=\"#FFFFFF\" width=\"20%\"><img src=\"".$DirName."ImgSys/".$icon.".png\" width=\"17\" height=\"17\" />&nbsp;&nbsp;<a onclick=\"window.open('".$DirFicheros.$fila->NomSistema."','Adjunto','width=680,height=500,scrollbars=yes')\" target=\"_blank\" onMouseOver=\"Leyenda(this,'".$FileDat."',1);\" class=\"linkea\">".$fila->NomOrigen."</a></td>";
+			echo "<td width=\"55%\" ><input type=\"text\" size=\"70\" name=\"dirImage\"  id=\"dirImage$a\" value=\"".$DirFicheros.$fila->NomSistema."\"   onclick=\"verurl('dirImage$a')\" class=\"border\" onchange=\"return  ValidarCtrl(event)\">";
+		
+		    echo  "<td width=\"25%\" align=\"center\">".$fila->Nombre."</td>";
+            echo  "<td width=\"15%\">".$fila->FCrea."</td>";
+		echo "</tr>";
+	}
+?>	
+</table>
+<style>
+.border {
+border: 1px solid #456987;
+border-radius:5px;
+}
+a.linkea
+{
+color: #0000cc;
+}
+     
+a.linkea:hover
+{
+cursor: pointer;
+}
+</style>
+
