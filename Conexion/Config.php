@@ -5,9 +5,9 @@ session_start();
 //PARAMETROS DE CONEXION
 
 
-$servidor		="localhost:8080";	
+$servidor		="localhost";	
 $usuario_db		="root";
-$password_db	="";
+$password_db	="root";
 $bd		="tesiskeslin";
 
 
